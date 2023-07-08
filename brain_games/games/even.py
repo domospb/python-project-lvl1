@@ -5,6 +5,7 @@ import random
 DESCRIPTION = """Answer "yes" if the number is even, otherwise answer "no"."""
 
 def is_even(number: int) -> bool:
+
     """Checks if given number is even."""
     return number % 2 == 0
 
