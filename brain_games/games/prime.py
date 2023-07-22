@@ -8,12 +8,15 @@ DESCRIPTION = 'Answer "yes" if given number is prime. ' \
 
 def is_prime(number):
     if number == 1:
-        return "no"
+        return False
     for i in range(2, (number // 2 + 1)):
         if number % i == 0:
-            return "no"
-    return "yes"
+            return False
+    return True
 
+
+def correct_answer(bool):
+    return 'yes' if bool else 'no'
 
 def get_expression_and_answer() -> tuple:
     """Make game question and answer."""
@@ -21,4 +24,4 @@ def get_expression_and_answer() -> tuple:
     max_number = 42
     number = randint(min_number, max_number)
     question = str(number)
-    return is_prime(number), question
+    return correct_answer(is_prime(number)), question
