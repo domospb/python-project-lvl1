@@ -18,6 +18,7 @@ def is_prime(number):
 def correct_answer(bool):
     return 'yes' if bool else 'no'
 
+
 def get_expression_and_answer() -> tuple:
     """Make game question and answer."""
     min_number = 1
