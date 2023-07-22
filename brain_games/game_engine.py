@@ -1,11 +1,16 @@
 """Brain Games engine. Enjoy!"""
 
 import prompt
-from brain_games.cli import welcome_user
+
 
 GAME_DURATION = 3
 WELCOME_MESSAGE = "Welcome to the Brain Games!"
 
+def welcome_user() -> str:
+    print("Welcome to the Brain Games!")
+    name = prompt.string("May I have your name? ")
+    print(f"Hello, {name}")
+    return name
 
 def play(game):
     """Common game logic."""
