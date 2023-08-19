@@ -7,3 +7,5 @@ def welcome_user() -> None:
     print(f"Hello, {name}")
 
 
+
+
