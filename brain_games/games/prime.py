@@ -7,16 +7,16 @@ DESCRIPTION = 'Answer "yes" if given number is prime. ' \
 
 
 def is_prime(number):
-    if number == 1:
+    if number <= 1:
         return False
-    for i in range(2, (number // 2 + 1)):
+    for i in range(2, int(number ** 0.5 + 1)):
         if number % i == 0:
             return False
     return True
 
 
-def correct_answer(bool):
-    return 'yes' if bool else 'no'
+def correct_answer(bool_exp):
+    return 'yes' if bool_exp else 'no'
 
 
 def get_expression_and_answer() -> tuple:
@@ -24,5 +24,5 @@ def get_expression_and_answer() -> tuple:
     min_number = 1
     max_number = 42
     number = randint(min_number, max_number)
-    question = str(number)
+    question = f'{number}'
     return correct_answer(is_prime(number)), question

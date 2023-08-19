@@ -4,22 +4,16 @@ import prompt
 
 
 GAME_DURATION = 3
-WELCOME_MESSAGE = "Welcome to the Brain Games!"
-
-
-def welcome_user() -> str:
-    print("Welcome to the Brain Games!")
-    name = prompt.string("May I have your name? ")
-    print(f"Hello, {name}")
-    return name
 
 
 def play(game):
     """Common game logic."""
-    name: str = welcome_user()
+    print("Welcome to the Brain Games!")
+    name = prompt.string("May I have your name? ")
+    print(f"Hello, {name}")
     print(game.DESCRIPTION)
 
-    for score in range(GAME_DURATION):
+    for _ in range(GAME_DURATION):
         correct_answer, expression = game.get_expression_and_answer()
         print(f"Question: {expression}")
         answer: str = prompt.string("Your answer: ")
